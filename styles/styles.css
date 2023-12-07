@@ -57,6 +57,8 @@ p:nth-child(even) {
   }
 }
 
+
+
 button {
   cursor: pointer;
   background-color: black;
@@ -65,6 +67,10 @@ button {
   padding: 10px 20px;
   border: none;
 }
+button:hover {
+  background-color: gray;
+}
+
 
 input {
   padding: 10px;
