@@ -2,8 +2,9 @@ import Product from './product.js';
 import Inventory from './inventory.js';
 import { storeProducts } from './localStorage.js';
 
+// Crea una instancia del inventario
 const inventory = new Inventory();
-
+// Define una lista de productos predeterminados con instancias de la clase Product
 let defaultProducts  = [
   new Product(1, "Lamzu Atlantis", Product.getRandomQuantity(), 100.99),
   new Product(2, "Razer Viper S.E", Product.getRandomQuantity(), 320.99),
@@ -16,10 +17,13 @@ let defaultProducts  = [
   new Product(9, "Razer Viper V2", Product.getRandomQuantity(), 105.99),
   new Product(10, "Lamzu Atlantis mini 4K", Product.getRandomQuantity(), 95.99),
 ];
-
+// Agrega cada producto predeterminado al inventario
 defaultProducts.forEach(product => inventory.addProduct(product));
+
+// Almacena los productos predeterminados en el almacenamiento local
 storeProducts(defaultProducts);
 
+// Obtiene el formulario de añadir producto por su ID y agrega un evento de escucha al envío
 const addForm = document.getElementById('form-add');
 addForm.addEventListener('submit', function(e) {
   e.preventDefault();
@@ -32,6 +36,7 @@ addForm.addEventListener('submit', function(e) {
   this.reset();
 });
 
+// Obtiene el formulario de editar producto por su ID y agrega un evento de escucha al envío
 const editForm = document.getElementById('form-edit');
 editForm.addEventListener('submit', function(e) {
   e.preventDefault(); 
@@ -43,6 +48,7 @@ editForm.addEventListener('submit', function(e) {
   this.reset(); 
 });
 
+// Obtiene el campo de búsqueda de productos por su ID y agrega un evento de entrada de texto
 const searchInput = document.getElementById('product-search');
 searchInput.addEventListener('input', function(e) {
   const searchValue = e.target.value;

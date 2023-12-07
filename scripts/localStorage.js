@@ -1,3 +1,4 @@
+// Almacena los productos predeterminados en el almacenamiento local
 export function storeProducts(defaultProducts) {
   defaultProducts.forEach(product => {
     if (product.name && product.quantity && product.price) {
